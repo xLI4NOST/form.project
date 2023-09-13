@@ -1,0 +1,950 @@
+@use 'sass:math'
+@use 'sass:color'
+
+@import config
+@import 'blocks/**/*'
+
+p
+  margin: 0
+
+h1
+  margin: 0
+h2
+  margin: 0
+a
+  text-decoration: none
+body
+  background-color: #F3F5F6
+
+.burger_button
+  display: none
+.header
+  display: flex
+  justify-content: space-between
+  border-radius: 0 0 20px 20px
+  max-width: 1440px
+  padding: 10px 30px
+  margin: 0 auto
+  background-color: #FFF
+.header_logo-block
+  display: flex
+  a
+    cursor: pointer
+  p
+    padding-left: 11px
+    color: #C6CBCD
+    font-variant-numeric: lining-nums tabular-nums
+    font-feature-settings: 'clig' off, 'liga' off
+    font-family: Montserrat
+    font-size: 20px
+    font-style: normal
+    font-weight: 600
+    line-height: 32px
+    span
+      text-transform: uppercase
+      color: var(--green-1, #79BE70)
+      font-variant-numeric: lining-nums tabular-nums
+      font-feature-settings: 'clig' off, 'liga' off
+      font-family: Montserrat
+      font-size: 20px
+      font-style: normal
+      font-weight: 600
+      line-height: 32px
+  button
+    border-radius: 16px
+    padding: 0
+    margin-left: 22px
+    border: none
+
+.logo-block_link
+  border-radius: 16px
+  padding: 10px 29px
+  border: 1px solid var(--green-1, #79BE70)
+  text-decoration: none
+  color: var(--green-1, #79BE70)
+  text-align: center
+  font-family: Inter
+  font-size: 14px
+  font-style: normal
+  font-weight: 500
+  line-height: 16px
+
+.header_sign-up
+  position: relative
+  display: flex
+  gap: 30px
+  align-items: center
+  a:nth-child(4)
+    max-height: none
+    color: var(--white, #FFF)
+    text-align: center
+    /* Forma/Inter | Semibold 14x20 */
+    font-family: Inter
+    font-size: 14px
+    font-style: normal
+    font-weight: 600
+    line-height: 20px
+    padding: 8px 18px
+    border-radius: 12px
+    background-color: var(--green-1, #79BE70)
+
+.lang-block
+  position: absolute
+  display: none
+  flex-direction: column
+  top: 55px
+  gap: 6px
+  button
+    color:  #6E7072
+    border: none
+    border-radius: 12px
+    background: #FFF
+    padding: 6px 20px
+    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.10), 0px 0px 20px 0px rgba(0, 0, 0, 0.05)
+  button:hover
+    color: #79BE70
+.lang-block_active
+  display: flex
+
+.sign-up_button
+  background-color: var(--green-1, #79BE70)
+  padding: 8px 16px
+  border: none
+  text-decoration: none
+  text-align: center
+  font-family: Inter
+  font-size: 14px
+  font-style: normal
+  font-weight: 600
+  line-height: 22px
+  border-radius: 12px
+  a
+    color: #FFF
+.sign-up_button-1
+  background-color: transparent
+  a
+    color: #79BE70
+
+.log-in
+  display: none
+
+@media screen and (max-width: 1280px )
+  .header_sign-up
+    gap: 20px
+
+@media screen and (max-width: 1024px )
+  .header_sign-up
+    gap: 20px
+    a:nth-child(3)
+      display: none
+  .log-in
+    display: block
+
+
+@media screen and (max-width: 999px)
+  .sign-up_button
+    display: none
+  .burger_button
+    display: block
+  .lang-block
+    right: 20px
+
+@media screen and (max-width: 768px)
+  .logo-block_button
+    display: none
+
+@media screen and (max-width: 480px)
+  .header_logo-block
+    p
+      align-self: center
+      font-variant-numeric: lining-nums tabular-nums
+      font-feature-settings: 'clig' off, 'liga' off
+      font-family: Montserrat
+      font-size: 14px
+      font-style: normal
+      font-weight: 600
+      line-height: 14px
+      span
+        display: none
+@media screen and (max-width: 350px)
+  .header_sign-up_button
+    width: 18px !important
+  .header_sign-up
+    gap: 10px
+    img
+      fill: #0a58ca
+  .lang-block
+    button
+      padding: 4px 8px
+      font-size: 10px
+
+
+.wrapper
+  max-width: 1146px
+  margin: 54px auto
+@media screen and (max-width: 1162px)
+  .wrapper
+    padding: 0 20px
+
+.search-block
+  h1
+    margin-bottom: 35px
+    color: var(--black, #000)
+    font-variant-numeric: lining-nums tabular-nums
+    font-feature-settings: 'clig' off, 'liga' off
+    font-family: Montserrat
+    font-size: 24px
+    font-style: normal
+    font-weight: 700
+    line-height: 32px
+
+@media screen and (max-width: 389px)
+  .search-block
+    h1
+      color: var(--black, #000)
+      font-variant-numeric: lining-nums tabular-nums
+      font-feature-settings: 'clig' off, 'liga' off
+      /* Forma/Montserrat | Medium 18x20 */
+      font-family: Montserrat
+      font-size: 18px
+      font-style: normal
+      font-weight: 500
+      line-height: 20px
+      margin-bottom: 26px
+
+
+.input-box_search-image
+  transform: translateY(-50%)
+  position: absolute
+  top: 50%
+  left: 12px
+
+.input-box_clear-image
+  cursor: pointer
+  display: none
+  transform: translateY(-50%)
+  position: absolute
+  top: 50%
+  right: 17px
+
+
+.input-box
+  position: relative
+  display: block
+  width: 100%
+  margin: 0 auto 0
+
+  input
+    background-color: transparent
+    color: var(--grey-2, #969C9E)
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 24px
+    padding: 16px 41px
+    height: 100%
+    width: 100%
+    border-radius: 16px
+    border: 1px solid var(--grey-3, #C6CBCD)
+
+.main-input_active
+  background-color: #FFF !important
+
+
+.result-block
+  margin-top: 10px
+  display: block
+  color: var(--black, #000)
+  font-family: Inter
+  font-size: 18px
+  font-style: normal
+  font-weight: 500
+  line-height: 25px
+  padding: 20px 24px 20px
+  border-radius: 15px
+  background: var(--white, #FFF)
+  box-shadow: 0px 5.104px 25.52px 0px rgba(0, 0, 0, 0.05)
+  span
+    color: var(--green-1, #79BE70)
+    font-family: Inter
+    font-size: 18px
+    font-style: normal
+    font-weight: 500
+    line-height: 25px
+
+
+.input-background_active
+  border-radius: 10px
+  padding: 7px 8px 10px
+  background-color: #D5EDD5
+.input-results
+  display: none
+
+.no-result
+  display: none
+  margin: 0 auto
+  max-width: 480px
+  padding: 36px 10px 45px
+  p
+    color: var(--black, #000)
+    text-align: center
+    font-family: Inter
+    font-size: 20px
+    font-style: normal
+    font-weight: 500
+    line-height: 25px
+  button
+    display: block
+    margin: 54px auto
+    background-color: #79BE70
+    border-radius: 16px
+    padding: 20px 78px
+    border: none
+    color: var(--white, #FFF)
+    text-align: center
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 600
+    line-height: 24px
+
+.main-content
+  margin-top: 35px
+  width: 100%
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  gap: 24px
+  justify-content: center
+.main-content_main-block
+  cursor: pointer
+  display: flex
+  flex-direction: column
+  //width: 366px
+  //height: 223px
+  border-radius: 16px
+  box-shadow: 0px 5.104px 25.52px 0px rgba(0, 0, 0, 0.05)
+  padding: 5px 23px 38px
+  gap: 17px
+  background-color: #FFF
+  h2
+    max-width: 320px
+    max-height: 48px
+    color: var(--black, #000)
+    /* Forma/Inter | Semibold 16x24 */
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 600
+    line-height: 24px
+  img
+    object-fit: contain
+    width: 187px
+    height: 139px
+    align-self: center
+
+@media screen and (max-width: 1199px)
+  .main-content
+    grid-template-columns: 1fr 1fr
+
+@media screen and (max-width: 768px)
+  .main-content
+    grid-template-columns: 1fr
+    margin-top: 26px !important
+
+
+.demo-block
+  margin-top: 82px
+  display: flex
+  justify-content: space-between
+  padding: 40px 67px
+  border-radius: 16px
+  background: var(--white, #FFF)
+  h2
+    max-height: 24px
+    max-width: 587px
+    color: var(--black, #000)
+    font-family: Inter
+    font-size: 18px
+    font-style: normal
+    font-weight: 400
+    line-height: 130%
+
+  button
+    border: none
+    color: var(--white, #FFF)
+    text-align: center
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 600
+    line-height: 24px
+    padding: 20px 57px
+    border-radius: 16px
+    background-color: #79BE70
+    a
+      color: #FFF
+
+@media screen and (max-width: 1050px)
+  .demo-block
+    padding: 30px 40px
+@media screen and (max-width: 999px)
+  .demo-block
+    flex-direction: column
+    gap: 28px
+    h2
+      align-self: center
+      text-align: center
+      max-height: none
+
+@media screen and (max-width: 768px)
+  .demo-block
+    h2
+      font-size: 14px
+
+@media screen and (max-width: 440px)
+  .demo-block
+    margin-top: 26px
+    background-color: transparent
+    padding: 0
+    button
+      padding: 16px 29px
+
+.footer
+  display: flex
+  gap: 64px
+  flex-wrap: nowrap
+  flex-direction: row
+  justify-content: space-between
+
+.docs
+  display: flex
+  flex-direction: column
+  max-width: 266px
+  button
+    margin: 0 0 6px
+    text-align: start
+    position: relative
+    color: var(--white, #FFF)
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 600
+    line-height: 20px
+    border: none
+    padding: 19px 12px 19px 62px
+    border-radius: 16px
+    background: var(--green-1, #79BE70)
+  p
+    margin-bottom: 6px
+    color: var(--grey-2, #969C9E)
+    font-family: Inter
+    font-size: 14px
+    font-style: normal
+    font-weight: 400
+    line-height: 18px
+  a
+    margin-left: 11px
+.footer_button-image
+  position: absolute
+  left: 13px
+  top: 50%
+  transform: translateY(-50%)
+
+.footer-logo
+  margin: 0 auto
+
+nav
+  display: flex
+  flex-direction: column
+  gap: 16px
+  h2
+    color: var(--black, #000)
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 600
+    line-height: 24px
+  a
+    color: var(--grey-1, #6E7072)
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 500
+    line-height: 22px
+.product-links
+  display: flex
+  flex-direction: column
+  gap: 16px
+.company-links
+  display: flex
+  flex-direction: column
+  gap: 16px
+.material-links
+  display: flex
+  flex-direction: column
+  gap: 16px
+.contacts-links
+  display: flex
+  flex-direction: column
+  gap: 16px
+
+
+.footer_nav-bar
+  width: 100%
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+.docs_button_bottom
+  display: none
+
+@media screen and (max-width: 1175px)
+  .footer_nav-bar
+    display: grid
+    gap: 20px
+    grid-template-rows: 1fr 1fr
+    grid-template-columns: 1fr 1fr
+
+@media screen and (max-width: 999px)
+  .docs
+    text-align: center
+    align-self: center
+  .footer
+    flex-direction: column
+    flex-wrap: wrap
+    gap: 34px
+  .footer_nav-bar
+    display: flex
+    gap: 20px
+    flex-direction: column
+  .docs_button
+    display: none
+  .docs_button_bottom
+    margin-top: 82px
+    align-self: center
+    display: block
+
+
+////newPages
+
+///question_block
+.question_block
+  display: flex
+  flex-direction: column
+  gap: 35px
+.question_block_head
+  display: flex
+  h2
+    transform: translateY(6px)
+    max-height: 32px
+    color: var(--black, #000)
+    font-variant-numeric: lining-nums tabular-nums
+    font-feature-settings: 'clig' off, 'liga' off
+    font-family: Montserrat
+    font-size: 24px
+    font-style: normal
+    font-weight: 700
+    line-height: 32px
+
+.comment-block
+  padding: 12px 18px
+  height: 147px
+  border-radius: 16px
+  border: 1px solid #CACED4
+  p
+    color: var(--grey-3, #81888C)
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 24px
+
+.add-file_button
+  border: none
+  box-shadow: 0px 0px 2px 0px rgba(47, 58, 74, 0.02), 0px 3px 6px 0px rgba(105, 130, 166, 0.02)
+  width: 221px
+  height: 56px
+  border-radius: 16px
+  background: #FFF
+  color: var(--black-100, #161616)
+  text-align: center
+  font-family: Inter
+  font-size: 16px
+  font-style: normal
+  font-weight: 600
+  line-height: 24px
+
+.question_block_contact-block
+  display: flex
+  flex-direction: column
+  gap: 35px
+  h2
+    color: var(--Black, #161616)
+    font-variant-numeric: lining-nums tabular-nums
+    font-feature-settings: 'clig' off, 'liga' off
+    font-family: Inter
+    font-size: 24px
+    font-style: normal
+    font-weight: 600
+    line-height: 32px
+
+.question_block_contact-block_buttons
+  display: flex
+  flex-direction: row
+  gap: 24px
+.social_button
+  background-color: transparent
+  display: flex
+  align-items: center
+  gap: 10px
+  cursor: pointer
+  width: 100%
+  padding: 11px 11px
+  border-radius: 16px
+  border: 1px solid #D3D7DB
+  box-shadow: 0px 5.104px 25.52px 0px rgba(0, 0, 0, 0.05)
+
+.selected_button
+  background-color: #FFF
+.social_button_v-icon
+  height: 14px
+.social_button_v-icon-green
+  display: block
+.green-icons
+  display: none
+  justify-content: center
+  img
+    align-self: center
+    margin: 0
+.social_image_green
+  display: block
+
+
+//.question_block_contact-block_button
+
+
+.question_block_contact-block_submit-button
+  align-self: center
+  border-radius: 16px
+  background-color: var(--green-30, rgba(121, 190, 112, 0.30))
+  border: none
+  padding: 20px 95px
+  max-width: 276px
+
+.question_block_contact-block_input
+  padding: 12px 18px
+  border-radius: 16px
+  border: 1px solid #CACED4
+  background-color: transparent
+.question_block_contact-block_submit-button_active
+  background-color: #79BE70
+  color: #FFF
+
+
+
+
+
+@media screen and (max-width: 768px)
+  .question_block
+    gap: 20px
+  .social_button
+    justify-content: center
+  .social_button_v-icon
+    display: none
+  .social_button_text
+    display: none
+
+@media screen and (max-width: 480px)
+  .question_block_contact-block_buttons
+    gap: 10px
+  .social_button
+    padding: 5px 26px
+  .question_block_contact-block_submit-button
+    background-color:  #E4F0E4
+    box-shadow: 0px 0px 2px 0px rgba(47, 58, 74, 0.02), 0px 3px 6px 0px rgba(105, 130, 166, 0.02)
+    /* кнопка */
+
+///question_block
+
+//users_group
+
+.users_group_info-main
+
+.back-image
+  cursor: pointer
+  position: absolute
+  left: -25px
+.about-image
+  cursor: pointer
+  position: absolute
+  right: 68px
+  top: 38px
+
+.users_group_info
+  display: none
+
+
+.users_group
+  z-index: -1
+  position: relative
+  padding: 29px 68px 64px
+  border-radius: 15.312px
+  background-color: #FFF
+  box-shadow: 0px 5.104px 25.52px 0px rgba(0, 0, 0, 0.05)
+.users_group_subtitle
+  color: #000
+  font-variant-numeric: lining-nums tabular-nums
+  font-feature-settings: 'clig' off, 'liga' off
+  font-family: Montserrat
+  font-size: 32px
+  font-style: normal
+  font-weight: 700
+  line-height: 40px
+.users_group_update-inf
+  margin-top: 5px
+  color: #969C9E
+  font-family: Inter
+  font-size: 16px
+  font-style: normal
+  font-weight: 400
+  line-height: 26px
+.users_group_main-text
+  display: flex
+  flex-direction: column
+  gap: 38px
+  margin: 25px auto 0
+  max-width: 754px
+  p
+    color:  #000
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 26px
+  h2
+    color: #000
+    font-variant-numeric: lining-nums tabular-nums
+    font-feature-settings: 'clig' off, 'liga' off
+    font-family: Montserrat
+    font-size: 24px
+    font-style: normal
+    font-weight: 700
+    line-height: 32px
+  li
+    color:  #000
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 26px
+.users_group_bold-text
+  color: var(--black, #000)
+  font-family: Inter
+  font-size: 16px
+  font-style: normal
+  font-weight: 700
+  line-height: 26px
+
+.users_group_big_block
+  border-radius: 15.312px
+  background-color: #EBEEF1
+  height: 390px
+
+.users_group_link
+  color: var(--green-1, #79BE70)
+  font-family: Inter
+  font-size: 16px
+  font-style: normal
+  font-weight: 400
+  line-height: 26px
+  text-decoration-line: underline
+.users_group_button-block
+  margin-top: 21px
+  display: flex
+  gap: 24px
+.users_group_navButton
+  cursor: pointer
+  align-items: center
+  position: relative
+  padding: 20px 18px
+  width: 100%
+  display: flex
+  justify-content: center
+  border: none
+  border-radius: 16px
+  background: #FFF
+  box-shadow: 0px 0px 2px 0px rgba(47, 58, 74, 0.02), 0px 3px 6px 0px rgba(105, 130, 166, 0.02)
+  a
+    width: 100%
+    color: black
+    text-decoration: none
+
+.users_group_navButton_image
+  left: 18px
+  position: absolute
+.users_group_navButton_image2
+  transform: rotateY(180deg)
+  left: auto
+  right: 18px
+
+.slider-block
+  margin-top: 106px
+
+.slider-block_subtitle
+  color: var(--black, #000)
+  font-variant-numeric: lining-nums tabular-nums
+  font-feature-settings: 'clig' off, 'liga' off
+  /* Subtitle 1 Semibold • 24x32 */
+  font-family: Inter
+  font-size: 24px
+  font-style: normal
+  font-weight: 600
+  line-height: 32px
+
+.slider-block_navigation
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+
+.slider_buttons
+
+.slider_button-back
+  transform: translateY(6px)
+  path
+    stroke: #79BE70
+
+.swiper-button-disabled
+  path
+    stroke: #C6CBCD
+
+.slider_dots
+  flex-direction: row
+  gap: 15px
+  max-width: 106px !important
+
+.swiper-pagination-bullet-active
+  width: 14px !important
+  height: 14px !important
+  background-color: #99D899 !important
+  transform: translateY(3px) !important
+
+.swiper
+  width: 100%
+.swiper-slide
+  display: flex !important
+  gap: 24px
+  flex-direction: row !important
+.main-content_main-block-swiper
+  max-height: 223px
+  width: 100%
+
+
+.other-block
+  display: none
+  margin-top: 30px
+  h2
+    margin-bottom: 24px
+    font-family: Montserrat
+    font-size: 18px
+    font-style: normal
+    font-weight: 700
+    line-height: 20px
+
+  article
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+  button
+    border: none
+    border-radius: 12px
+    background-color: #FFF
+    box-shadow: 0px 0px 2px 0px rgba(47, 58, 74, 0.02), 0px 3px 6px 0px rgba(105, 130, 166, 0.02)
+    padding: 16px 28px 16px
+    text-align: center
+    font-family: Inter
+    font-size: 14px
+    font-style: normal
+    font-weight: 600
+    line-height: 16px
+    a
+      color: black
+
+@media screen and (max-width: 999px)
+  .about-image
+    display: none
+  .users_group_navButton
+    p
+      font-size: 12px
+@media screen and (max-width: 888px)
+  .users_group_navButton
+    display: flex
+    flex-direction: column
+  .users_group_navButton:nth-child(2)
+    flex-direction: column-reverse
+  .users_group_navButton_image
+    position: static
+  .slider-block
+    display: none
+  .other-block
+    display: block
+
+@media screen and (max-width: 768px)
+  .users_group
+    padding: 29px 48px 54px
+  .users_group_navButton
+    gap: 10px
+  .users_group_big_block
+    height: 290px
+  .users_group_info
+    display: flex
+    flex-direction: column
+    gap: 24px
+    span
+      display: flex
+      flex-direction: row-reverse
+      img
+        align-self: start
+        position: static
+        display: block
+  .users_group
+    margin-top: 24px
+  .users_group_main-text
+    gap: 21px
+  .back-image
+    display: none
+  .users_group_info-main
+    display: none
+
+@media screen and (max-width: 480px)
+  .users_group_main-text
+    ul
+      padding: 0 15px 0
+  .users_group_big_block
+    height: 129px
+    max-height: 129px
+  .users_group
+    padding: 14px 16px 32px
+  .users_group_main-text
+    h2
+      font-size: 18px
+    p
+      font-size: 14px
+  .users_group_bold-text
+    font-family: Inter
+    font-size: 14px
+    font-style: normal
+    font-weight: 600
+    line-height: 20px
+  .users_group_link
+    font-family: Inter
+    font-size: 14px
+    font-style: normal
+    font-weight: 400
+    line-height: 20px
+  .users_group_navButton
+    padding: 10px 13px 11px
+
+
+//users_group
